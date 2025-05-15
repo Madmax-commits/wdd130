@@ -15,7 +15,7 @@ box-shadow: 0 0 30px gray ;
 }
 p {padding: 10px;
 }
-main {max-width: 10px;
+main {max: 10px;
 }
 aside {width: 20rem;
 margin: 1rem;
