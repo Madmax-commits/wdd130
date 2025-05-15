@@ -15,7 +15,7 @@ box-shadow: 0 0 30px gray ;
 }
 p {padding: 10px;
 }
-main {width: 10px;
+main {max-width: 10px;
 }
 aside {width: 20rem;
 margin: 1rem;
@@ -28,7 +28,7 @@ text-align: center;
 img {width: 150px;
 height: auto;
 }
-p {padding: 1%;
+p {padding: 10%;
 }
 footer {margin-top: 15px;
 border-top: 1px  #000;
