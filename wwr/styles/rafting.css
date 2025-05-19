@@ -1,1 +1,37 @@
+:root {
+ --primary-color:#191308; /* smoky black */
+ --secondary-color:#322A26;/* Van Dyke */
+ --accent1-color:#454B66;/* Delft Blue */
+ --accent2-color:#677BD7;/*glaucous */
+ --heading-font:"Alegreya SC", san-serif;
+ --body-font: Roboto, san-serif;
+}
+header {
+   background-color:var(--primary-color);
+   color:var(--accent2-color);
+}
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;   
+}
+body{
+  font-family:var(--body-font) ;
+  color:var(--accent1-color)  
+}
+header, main, footer {
+    width: 840px;
+    margin: auto;
+}
+h1, h2 {
+    font-family:var(--heading-font) ;
+    color: var(--primary-color);
+}
+nav, p, section, article {
+    margin: 16px;
+    padding: 8px;
+}
+.socilmedia a {
+    text-decoration: none;
+}
 
