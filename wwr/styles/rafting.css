@@ -1,60 +1,94 @@
 :root {
- --primary-color:#191308; /* smoky black */
- --secondary-color:#322A26;/* Van Dyke */
- --accent1-color:#454B66;/* Delft Blue */
- --accent2-color:#677BD7;/*glaucous */
- --heading-font:"Alegreya SC", san-serif;
- --body-font: Roboto, san-serif;
+    --primary-color: #191308; /* smoky black */
+    --secondary-color: #322A26; /* Van Dyke */
+    --accent1-color: #454B66; /* Delft Blue */
+    --accent2-color: #677BD7; /* Glaucous */
+    --heading-font: "Alegreya SC", sans-serif;
+    --body-font: Roboto, sans-serif;
 }
-header {
-   background-color:var(--primary-color);
-   color:var(--accent2-color);
-}
+
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-  font-family:var(--body-font) ;
-  color:var(--accent1-color)  
+
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    background-color: #fff;
 }
+
+header {
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    padding: 1rem;
+    text-align: center;
+}
+
 header, main, footer {
     width: 840px;
     margin: auto;
 }
+
 h1, h2 {
-    font-family:var(--heading-font) ;
+    font-family: var(--heading-font);
     color: var(--primary-color);
 }
+
 nav, p, section, article {
     margin: 16px;
     padding: 8px;
 }
-.socilmedia a {
+
+nav a {
     text-decoration: none;
+    color: var(--accent2-color);
+    margin: 0 10px;
 }
+
 .hero {
     position: relative;
+    text-align: center;
 }
+
 .hero img {
     display: block;
-    width: 100px;
+    width: 100%;
     height: auto;
 }
-h1 {
- position: absolute;   
- top: 20px;
- width:100% ;
- padding: 16px;
- text-align: center;
- opacity:0.7;
- background-color:var(--accent1-color) ;
- color: #fff; /* white text- make sure there is enough contrast with the background-color */
+
+.hero h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px;
+    width: 100%;
+    background-color: var(--accent1-color);
+    color: #fff;
+    opacity: 0.85;
+    font-size: 2rem;
+    text-align: center;
 }
-.hero article img {
-    float:right;
+
+article img.float-img {
+    float: right;
+    margin-left: 16px;
+    margin-bottom: 8px;
     width: 125px;
+    height: auto;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    margin: 0 5px;
+    vertical-align: middle;
 }
 
 
