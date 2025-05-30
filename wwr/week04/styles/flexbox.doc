@@ -1,0 +1,210 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+header {
+  background: purple;
+  height: 100px;
+}
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+section {
+  zoom: 0.8;
+  min-width: 400px;
+}
+article {
+  padding: 10px;
+  margin: 10px;
+  background: aqua;
+}
+section {
+    display: flex;                     /*  Let's recap what's happening here. Adding a display value of flex to an element makes it a flex container. The container is displayed as Block-level content in terms of how it interacts with the rest of the page. When the element is converted to a flex container, its children are converted to (and laid out as) flex items. */
+    flex-wrap: wrap;   /* nowrap: Every item is fit to a single line.
+wrap: Items wrap around to additional lines.
+wrap-reverse: Items wrap around to additional lines in reverse. */                /* Here we see that the children are indeed breaking out of their container. By default, the browser tries to place all the flex items in a single row if the flex-direction is set to row or a single column if the flex-direction is set to column.*/
+flex-direction: row-reverse;    /*flex-flow: row wrap;  */       /* At this point it's worth noting that a shorthand exists for flex-direction and flex-wrap: flex-flow. So, for example, you can replace */
+
+}                                      /*One way in which you can fix this is to add the following declaration to your <section> rule: */                                  /* flex-direction: column; row-reverse and column-reverse *//* Flexbox provides a property called flex-direction that specifies which direction the main axis runs (which direction the flexbox children are laid out in). By default this is set to row, which causes them to be laid out in a row in the direction your browser's default language works in (left to right, in the case of an English browser). */
+
+/*Flexible sizing of flex items
+Let's now return to our first example and look at how we can control what proportion of space flex items take up compared to the other flex items.
+
+In your local copy, add the following rule to the bottom of your CSS:  */
+
+article{
+  flex: 1;
+}
+
+/* This is a unitless proportion value that dictates how much available space along the main axis each flex item will take up compared to other flex items. In this case, we're giving each <article> element the same value (a value of 1), which means they'll all take up an equal amount of the spare space left after properties like padding and margin have been set. This value is proportionally shared among the flex items: giving each flex item a value of 400000 would have exactly the same effect. */
+/* Now add the following rule below the previous one: */
+
+article:nth-of-type(5){
+  flex:2
+}
+/*Now when you refresh, you'll see that the third <article> takes up twice as much of the available width as the other two. There are now four proportion units available in total (since 1 + 1 + 2 = 4). The first two flex items have one unit each, so they each take 1/4 of the available space. The third one has two units, so it takes up 2/4 of the available space (or one-half).  */
+
+/* You can also specify a minimum size value within the flex value. Try updating your existing article rules like so: */
+
+article {
+  flex: 1 100px;
+}
+
+article:nth-of-type(5) {
+  flex: 2 100px;
+}
+/* This basically states, "Each flex item will first be given 100px of the available space. After that, the rest of the available space will be shared according to the proportion units." You'll see a difference in how the space is shared. */
+
+/*All the flex items have a minimum width of 100 pixels—set using 'flex'. The value of flex for first two flex items is 1 and for the third item is 2. This splits the remaining space in the flex container into 4 proportion units. One unit is assigned to each of the first two flex items and 2 units are assigned to the third flex item, making the third flex item wider than the other two, which are of the same width.  */
+
+/* flex: shorthand versus longhand
+flex is a shorthand property that can specify up to three different values:
+
+The unitless proportion value we discussed above. This can be specified separately using the flex-grow longhand property.
+A second unitless proportion value, flex-shrink, which comes into play when the flex items are overflowing their container. This value specifies how much an item will shrink in order to prevent overflow. This is quite an advanced flexbox feature and we won't be covering it any further in this article.
+The minimum size value we discussed above. This can be specified separately using the flex-basis longhand value.
+We'd advise against using the longhand flex properties unless you really have to (for example, to override something previously set). They lead to a lot of extra code being written and can be somewhat confusing. */
+
+body {
+  font-family: sans-serif;
+  width: 90%;
+  max-width: 960px;
+  margin: 10px auto;
+}
+div {
+  height: 100px;
+  border: 1px solid black;
+}
+button {
+  font-size: 18px;
+  line-height: 1.5;
+  width: 15%;
+}
+
+/* We're going to turn this into a neat, flexible button/toolbar. At the moment you'll see a horizontal menu bar with some buttons jammed into the top left-hand corner. */
+div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  alignment-baseline:central ;
+}
+
+/* Refresh the page and you'll see that the buttons are now nicely centered horizontally and vertically. We've done this via two new properties. The flex items are positioned at the center of the cross-axis by setting the align-items property to center. The flex items are spaced evenly along the main-axis by setting the justify-content property to space-around.
+
+The align-items property controls where the flex items sit on the cross axis.
+
+By default, the value normal which behaves as stretch in flexbox. This stretches all flex items to fill the parent in the direction of the cross axis. If the parent doesn't have a fixed size in the cross axis direction, then all flex items will become as tall (or wide) as the tallest (or widest) flex item. This is how our first example had columns of equal height by default.
+The center value that we used in our above code causes the items to maintain their intrinsic dimensions, but be centered along the cross axis. This is why our current example's buttons are centered vertically.
+You can also have values like flex-start, self-start or start and flex-end, self-end or end, which will align all items at the start and end of the cross axis respectively. The baseline values will line up the flex items by their baseline; basically the bottom of each flex items first line of text will be lined up with the bottom of the first line of the element with the greatest distance between the cross start and that baseline. See align-items for the full details.
+You can override the align-items behavior for individual flex items by applying the align-self property to them. For example, try adding the following to your CSS: */
+
+button:first-child {
+  align-self: flex-end;
+}
+
+/* Have a look at what effect this has and remove it again when you've finished.
+
+justify-content controls where the flex items sit on the main axis.
+
+The default value is normal, which behaves as start, which makes all the items sit at the start of the main axis.
+You can use end or flex-end to make them sit at the end.
+The left and right values behave as start or end depending on the writing mode direction.
+center is also a value for justify-content. It'll make the flex items sit in the center of the main axis.
+The value we've used above, space-around, is useful — it distributes all the items evenly along the main axis with a bit of space left at either end.
+There is another value, space-between, which is very similar to space-around except that it doesn't leave any space at either end.
+The justify-items property is ignored in flexbox layouts.
+
+We'd like to encourage you to play with these values to see how they work before you continue. */
+
+/* Ordering flex items
+Flexbox also has a feature for changing the layout order of flex items without affecting the source order. This is another thing that is impossible to do with traditional layout methods.
+
+Try adding the following CSS to your button bar example code: */
+
+button:first-child {
+  order: 1;
+}
+
+/* Refresh and you'll see that the "Smile" button has moved to the end of the main axis. Let's talk about how this works in a bit more detail:
+
+By default, all flex items have an order value of 0.
+Flex items with higher specified order values will appear later in the display order than items with lower order values.
+Flex items with the same order value will appear in their source order. So if you have four items whose order values have been set as 2, 1, 1, and 0 respectively, their display order would be 4th, 2nd, 3rd, then 1st.
+The 3rd item appears after the 2nd because it has the same order value and is after it in the source order.
+You can set negative order values to make items appear earlier than items whose value is 0. For example, you could make the "Blush" button appear at the start of the main axis using the following rule: */
+
+button:last-child {
+  order: -1;
+}
+/* While you can change the order using order, the tabbing order remains the same as the code order. Changing the order of focusable elements can negatively impact usability for your keyboard users! */
+
+/* Nested flex boxes
+It's possible to create some pretty complex layouts with flexbox. It's perfectly OK to set a flex item to also be a flex container, so that its children are also laid out like flexible boxes. */
+
+/*This complex layout has a few flex items that are also flex containers. The HTML for this is fairly straightforward. We've got a <section> element containing three <article>s. The third <article> contains three <div>s, and the first <div> contains five <button>s:
+
+section - article
+          article
+          article - div - button
+                    div   button
+                    div   button
+                          button
+                          button
+Let's look at the code we've used for the layout.
+
+First of all, we set the children of the <section> to be laid out as flexible boxes.
+
+css*/
+
+section {
+  display: flex;
+}
+/* Next, we set some flex values on the <article>s themselves. Take special note of the second rule here: we're setting the third <article> to have its children laid out like flex items too, but this time we're laying them out like a column. */
+article {
+  flex: 1 100px;
+}
+
+article:nth-of-type(3) {
+  flex: 3 100px;
+  display: flex;
+  flex-flow: column;
+}
+
+/* Next, we select the first <div>. We first use flex: 1 100px; to effectively give it a minimum height of 100px, then we set its children (the <button> elements) to also be laid out like flex items. Here we lay them out in a wrapping row and align them in the center of the available space as we did with the individual button example we saw earlier. */
+
+article:nth-of-type(3) div:first-child {
+  flex: 1 100px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center; /* aligns items vertically: flex-start: Items align to the top of the container.
+flex-end: Items align to the bottom of the container.
+center: Items align at the vertical center of the container.
+baseline: Items display at the baseline of the container.
+stretch: Items are stretched to fit the container. */ 
+  justify-content: space-around; /* aligns items horitotally: flex-start: Items align to the left side of the container.
+flex-end: Items align to the right side of the container.
+center: Items align at the center of the container.
+space-between: Items display with equal spacing between them.
+space-around: Items display with equal spacing around them. */
+}
+/* align-content to set how multiple lines are spaced apart from each other. This property takes the following values:
+
+flex-start: Lines are packed at the top of the container.
+flex-end: Lines are packed at the bottom of the container.
+center: Lines are packed at the vertical center of the container.
+space-between: Lines display with equal spacing between them.
+space-around: Lines display with equal spacing around them.
+stretch: Lines are stretched to fit the container.
+This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect. */
+/* Finally, we set some sizing on the button. This time by giving it a flex value of 1 auto. This has a very interesting effect, which you'll see if you try resizing your browser window width. The buttons will take up as much space as they can. As many will fit on a line as is comfortable; beyond that, they'll drop to a new line. */
+
+button {
+  flex: 1 auto;
+  margin: 5px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
