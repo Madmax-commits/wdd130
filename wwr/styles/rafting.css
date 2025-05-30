@@ -26,6 +26,13 @@ header {
     text-align: center;
 }
 
+.header-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    gap: 1rem;
+}
+
 header, main, footer {
     width: 840px;
     margin: auto;
@@ -36,7 +43,10 @@ h1, h2 {
     color: var(--primary-color);
 }
 
-nav, p, section, article {
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     margin: 16px;
     padding: 8px;
 }
@@ -78,7 +88,7 @@ nav a {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 16px;
-    background-color: var(--accent2-color);
+    background-color: var(--accent1-color);
     color: #fff;
     opacity: 0.85;
     text-align: center;
@@ -93,6 +103,25 @@ article img.float-img {
     height: auto;
 }
 
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+}
+
+.adventure-grid figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.socialmedia {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin: 16px;
+    padding: 8px;
+}
+
 .socialmedia a {
     text-decoration: none;
 }
@@ -102,4 +131,10 @@ article img.float-img {
     height: 32px;
     margin: 0 5px;
     vertical-align: middle;
+}
+
+@media screen and (max-width: 860px) {
+    header, main, footer {
+        width: 95%;
+    }
 }
