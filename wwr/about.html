@@ -12,20 +12,118 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        :root {
+            --primary-color: #191308; /* smoky black */
+            --secondary-color: #322A26; /* Van Dyke */
+            --accent1-color: #454B66; /* Delft Blue */
+            --accent2-color: #677BD7; /* Glaucous */
+            --heading-font: "Alegreya SC", sans-serif;
+            --body-font: Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--accent1-color);
+            background-color: #fff;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--accent2-color);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header, main, footer {
+            width: 840px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+        }
+
+        nav, p, section, article {
+            margin: 16px;
+            padding: 8px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--accent2-color);
+            margin: 0 10px;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero h1 {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 16px;
+            width: 100%;
+            background-color: var(--accent1-color);
+            color: #fff;
+            opacity: 0.85;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        article img.float-img {
+            float: right;
+            margin-left: 16px;
+            margin-bottom: 8px;
+            width: 125px;
+            height: auto;
+        }
+
+        .socialmedia a {
+            text-decoration: none;
+        }
+
+        .socialmedia img {
+            width: 32px;
+            height: 32px;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width: 860px) {
+            header, main, footer {
+                width: 95%;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <div class="header-grid">
-            <img src="images/wwr-logo.webp" alt="Rafting Company Logo" width="200">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="trips.html">Trips</a>
-                <a href="contact.html">Contact Us</a>
-            </nav>
-        </div>
+        <img src="images/wwr-logo.webp" alt="Rafting Company Logo" width="200">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="trips.html">Trips</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </header>
 
     <main>
@@ -33,40 +131,23 @@
             <img src="images/hero.webp" alt="div background image">
             <h1>White Water Rafting</h1>
             <article>
-                <img src="images/happy_client_pic.jpg" alt="Happy Rafting Participant" class="float-img">
-                <p>Experience the thrill of white water rafting with our expert guides! Our company is dedicated to providing safe, exciting, and unforgettable adventures on some of the most scenic rivers. Whether you're a beginner or a seasoned rafter, we ensure a personalized experience with top-notch equipment and knowledgeable staff.</p>
+                <img src="images/happy_cleint_pic.jpg" alt="Happy Rafting Participant" class="float-img">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tempora eveniet aperiam. Expedita corporis libero dolorum soluta dolorem.</p>
             </article>
         </div>
 
         <section>
             <h2>History</h2>
-            <p>Founded in 1995, White Water Rafting began as a small family-owned business with a passion for outdoor adventure. Over the past three decades, we've grown into a premier rafting company, offering guided trips across multiple rivers in the region. Our commitment to safety, environmental stewardship, and customer satisfaction has earned us a reputation as a trusted name in white water rafting.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laborum illo eos inventore doloribus at!</p>
         </section>
 
         <section>
             <h2>Adventure Awaits You!</h2>
-            <div class="adventure-grid">
-                <figure>
-                    <img src="images/img1_wwr.jpg" alt="Rafting Adventure - Image 1">
-                    <figcaption>Navigate the roaring rapids of the Grand River!</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/img2_wwr.jpg" alt="Rafting Adventure - Image 2">
-                    <figcaption>Enjoy scenic views on the Crystal Falls route.</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/img3_wwr.jpg" alt="Rafting Adventure - Image 3">
-                    <figcaption>Challenge the wild waves of the Thunder Canyon!</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/img4_wwr.jpg" alt="Rafting Adventure - Image 4">
-                    <figcaption>Relax on a family-friendly float trip.</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/img5_wwr.jpg" alt="Rafting Adventure - Image 5">
-                    <figcaption>Experience teamwork in action on the River Quest!</figcaption>
-                </figure>
-            </div>
+            <img src="images/img1_wwr.jpg" alt="Rafting Adventure - Image 1">
+            <img src="images/img2_wwr.jpg" alt="Rafting Adventure - Image 2">
+            <img src="images/img3_wwr.jpg" alt="Rafting Adventure - Image 3">
+            <img src="images/img4_wwr.jpg" alt="Rafting Adventure - Image 4">
+            <img src="images/img5_wwr.jpg" alt="Rafting Adventure - Image 5">
         </section>
     </main>
 
@@ -87,3 +168,6 @@
 </body>
 
 </html>
+
+
+
