@@ -67,7 +67,7 @@ nav a:hover {
 /* Adjusted heading position and changed background color */
 .hero h1 {
     position: absolute;
-    top: 35%; /* Lowered slightly */
+    top: 5%; /* Lowered slightly */
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 16px;
@@ -82,7 +82,7 @@ nav a:hover {
 /* Article moved down slightly and adjusted color */
 .hero article {
     position: absolute;
-    bottom: 20%; /* Lowered a bit */
+    bottom: 65%; /* Lowered a bit */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
