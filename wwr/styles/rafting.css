@@ -1,5 +1,6 @@
+/* Global Styles */
 :root {
-    --primary-color: #191308; /* smoky black */
+    --primary-color: #191308; /* Smoky Black */
     --secondary-color: #322A26; /* Van Dyke */
     --accent1-color: #454B66; /* Delft Blue */
     --accent2-color: #677BD7; /* Glaucous */
@@ -19,34 +20,38 @@ body {
     background-color: #fff;
 }
 
+/* Header with CSS Grid */
 header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
     background-color: var(--primary-color);
     color: var(--accent2-color);
     padding: 1rem;
-    text-align: center;
 }
 
-header, main, footer {
-    width: 840px;
-    margin: auto;
+header img {
+    width: 200px;
+    height: auto;
+    justify-self: start;
 }
 
-h1, h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
-
-nav, p, section, article {
-    margin: 16px;
-    padding: 8px;
+/* Navigation with CSS Flex */
+nav {
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav a {
     text-decoration: none;
     color: var(--accent2-color);
-    margin: 0 10px;
+    margin: 0 15px;
+    padding: 8px;
 }
 
+nav a:hover {
+    color: #fff;
+}
 .hero {
     position: relative;
     text-align: center;
@@ -56,52 +61,138 @@ nav a {
     display: block;
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
+/* Adjusted heading position and changed background color */
 .hero h1 {
     position: absolute;
-    top: 20%;
+    top: 35%; /* Lowered slightly */
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 16px;
-    width: 100%;
-    background-color: var(--accent1-color);
+    width: 80%;
+    background-color: rgba(31, 59, 77, 0.85); /* Changed to navy */
     color: #fff;
-    opacity: 0.85;
     font-size: 2rem;
     text-align: center;
+    border-radius: 8px;
 }
 
+/* Article moved down slightly and adjusted color */
 .hero article {
     position: absolute;
-    bottom: 10%;
+    bottom: 20%; /* Lowered a bit */
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 16px;
-    background-color: var(--accent2-color);
+    width: 70%;
+    background-color: rgba(31, 59, 77, 0.85); /* Changed to navy */
     color: #fff;
-    opacity: 0.85;
+    padding: 20px;
     text-align: center;
-    width: 80%;
+    border-radius: 8px;
 }
 
-article img.float-img {
+/* Floating image remains with subtle enhancements */
+.hero article img.float-img {
     float: right;
     margin-left: 16px;
-    margin-bottom: 8px;
-    width: 125px;
+    width: 150px;
     height: auto;
+    border-radius: 8px;
 }
 
-.socialmedia a {
-    text-decoration: none;
+/* History Section */
+.history-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    background-color: transparent; /* Navy for consistency */
+    border-radius: 8px;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Creates equal-width columns */
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.history-content img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    display: bold;
+}
+
+.history-content p {
+    flex: 1;
+    text-align: justify;
+    margin: 0;
+    line-height: 1.6;
+    color: black;
+    font-size: 1.1rem; /* Slightly larger text for readability */
+    font-weight: 400; /* Adjusted to make text clearer */
+}
+
+/* Adventure Images Styled with CSS Flex */
+.adventure-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    background-color: transparent; /* Makes the container invisible */
+}
+
+.adventure-container h2 {
+    margin-top: -20px; /* Moves the title closer to the History section */
+}
+
+.adventure-gallery {
+    display: flex;
+    justify-content: center; /* Aligns images in a straight row */
+    gap: 20px;
+    flex-wrap: nowrap; /* Prevents layout breaking on smaller screens */
+}
+
+.adventure-gallery figure {
+    text-align: center;
+    flex: 1;
+}
+
+.adventure-gallery img {
+    width: 180px; /* Ensures images are uniform */
+    height: auto;
+    border-radius: 8px;
+}
+
+.adventure-gallery figcaption {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+
+
+/* Footer with Social Icons */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    padding: 1rem;
+}
+
+.socialmedia {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .socialmedia img {
     width: 32px;
     height: 32px;
-    margin: 0 5px;
-    vertical-align: middle;
 }
-
 
