@@ -137,6 +137,14 @@ nav a:hover {
 }
 
 /* Adventure Images Styled with CSS Flex */
+.adventure-text {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 80%;
+    margin: 0 auto 20px; /* Centers the text and adds spacing */
+    color: var(--primary-color);
+}
+
 .adventure-container {
     width: 80%;
     margin: auto;
