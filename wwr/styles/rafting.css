@@ -26,7 +26,7 @@ header {
     grid-template-columns: auto 1fr;
     align-items: center;
     background-color: var(--primary-color);
-    color:  #E3E6EC;
+    color: #E3E6EC;
     padding: 1rem;
 }
 
@@ -52,9 +52,14 @@ nav a {
 nav a:hover {
     color: #E3E6EC;
 }
+
 .hero {
-    position: relative;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
 }
 
 .hero img {
@@ -67,12 +72,12 @@ nav a:hover {
 /* Adjusted heading position and changed background color */
 .hero h1 {
     position: absolute;
-    top: 5%; /* Lowered slightly */
+    top: 78%; /* Lowered slightly */
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 16px;
+    padding: 1px;
     width: 80%;
-    background-color: rgba(20, 40, 85, 0.9); 
+    background-color: rgba(20, 40, 85, 0.9);
     color: #FFFFFF;
     font-size: 2rem;
     text-align: center;
@@ -82,13 +87,13 @@ nav a:hover {
 /* Article moved down slightly and adjusted color */
 .hero article {
     position: absolute;
-    bottom: 65%; /* Lowered a bit */
+    bottom: -30%; /* Lowered a bit */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
-    background-color: rgba(20, 40, 85, 0.9); 
+    max-width: 90%;
+    background-color: rgba(20, 40, 85, 0.9);
     color: #FFFFFF;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     border-radius: 8px;
 }
@@ -160,7 +165,7 @@ nav a:hover {
 .adventure-gallery {
     display: flex;
     justify-content: center; /* Aligns images in a straight row */
-    gap: 20px;
+    gap: 10px;
     flex-wrap: nowrap; /* Prevents layout breaking on smaller screens */
 }
 
@@ -180,15 +185,13 @@ nav a:hover {
     color: #191308;
 }
 
-
-
 /* Footer with Social Icons */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-color);
-    color: #E3E6EC ;
+    color: #E3E6EC;
     padding: 1rem;
 }
 
@@ -202,4 +205,13 @@ footer {
     width: 32px;
     height: 32px;
 }
-
+/* Responsive Design */
+@media (max-width: 768px) {
+    .history-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .adventure-gallery img {
+        width: 100px; /* Smaller images for small screens */
+    }
+}
