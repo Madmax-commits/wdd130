@@ -59,7 +59,6 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     
-    
 }
 
 .hero img {
@@ -72,7 +71,7 @@ nav a:hover {
 /* Adjusted heading position and changed background color */
 .hero h1 {
     position: absolute;
-    top: 78%; /* Lowered slightly */
+    top: 40%; /* Lowered slightly */
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1px;
@@ -87,7 +86,7 @@ nav a:hover {
 /* Article moved down slightly and adjusted color */
 .hero article {
     position: absolute;
-    bottom: -30%; /* Lowered a bit */
+    bottom: 19%; /* Lowered a bit */
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90%;
