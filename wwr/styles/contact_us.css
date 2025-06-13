@@ -250,6 +250,12 @@ footer p {
 .socialmedia a img:hover {
     opacity: 0.8;
 }
+.vcss-badge {
+  border: 0;
+  width: 88px;
+  height: 31px;
+}
+
 
 /* Responsive design */
 @media (max-width: 768px) {
