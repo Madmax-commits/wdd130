@@ -90,67 +90,50 @@ h1 {
 }
 
 .map-container iframe {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    border-radius: 8px;
+   width: 50%;
+   height : 300px;
+   border: 0;
 }
 
 /* Employee profiles */
 .employee-profiles {
-     display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: nowrap;
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .employee-profiles h2 {
-    position: absolute;
-    top:136%;
-    text-align: center;
-    font-family: 'Alegreya SC', serif;
-    font-size: 1.8rem;
-    color: #033e6b;
-    
+  font-family: 'Alegreya SC', serif;
+  font-size: 1.8rem;
+  color: #033e6b;
+  margin-bottom: 20px;
 }
 
-.employee-profiles .employee-container {
-    display: grid;
-    grid-template-columns: auto auto auto; /* ✅ Creates 3 auto-sized columns */
-    justify-content: center;
-    gap: 40px;
-    overflow-x: auto;
-    padding: 10px 0;
+.employee-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  justify-items: center;
 }
 
-
-.employee-profiles .employee {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 150px; /* Ensure consistent width for alignment */
+.employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .employee img {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: self-start;
-    justify-content: space-around;
-    justify-items: center;
-    flex-wrap: nowrap;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .employee p {
-    font-size: 1rem;
-    color: #333;
+  font-size: 1rem;
+  color: #333;
 }
+
 
 /* Contact form */
 .contact-form {
