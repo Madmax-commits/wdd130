@@ -118,12 +118,11 @@ h1 {
 
 .employee-profiles .employee-container {
     display: grid;
-    grid-column-start: auto auto auto;
+    grid-template-columns: auto auto auto; /* ✅ Creates 3 auto-sized columns */
     justify-content: center;
     gap: 40px;
-   flex-wrap: nowrap; /* Prevent wrapping to keep employees in a single row */
     overflow-x: auto;
-    padding: 10px 0 ;
+    padding: 10px 0;
 }
 
 
