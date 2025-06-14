@@ -1,3 +1,4 @@
+
 /* Global Styles */
 :root {
     --primary-color: #14110F; /* Darker Smoky Black */
@@ -6,8 +7,8 @@
     --accent2-color: #3059A4; /* Better Readability */
     --heading-font: "Alegreya SC", sans-serif;
     --body-font: Roboto, sans-serif;
-}
-
+  
+}        
 * {
     margin: 0;
     padding: 0;
