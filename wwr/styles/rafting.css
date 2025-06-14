@@ -35,7 +35,7 @@ header {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    background-color: ;
+    background-color:#2B2320 ;
     color: #F7FAFC; /* Adjusted for better contrast */
     padding: 1rem;
 }
