@@ -1,0 +1,131 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore exciting whitewater rafting trips and adventures offered by White Water Rafting. Choose from our thrilling packages and book your adventure today!">
+    <title>Trips | White Water Rafting</title>
+    <link rel="stylesheet" href="styles/trips.css">
+</head>
+<body>
+    <header>
+        <img src="images/wwr-logo.webp" alt="White Water Rafting Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="trips.html">Trips</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Our Rafting Adventures</h1>
+            <p>Discover thrilling whitewater rafting trips tailored for all skill levels. Ready to paddle? <a href="contact.html" class="cta-button">Contact Us to Book Now!</a></p>
+        </section>
+        <section class="trip-descriptions">
+            <div class="trip">
+                <img src="images/hero.webp" alt="Rapid Rush Adventure">
+                <h2>Rapid Rush Adventure</h2>
+                <p>Experience heart-pounding excitement on our 3-day Rapid Rush trip. Navigate Class III-IV rapids through stunning canyons. Perfect for thrill-seekers with some rafting experience. Includes camping and meals.</p>
+            </div>
+            <div class="trip">
+                <img src="images/img5_wwr.jpg" alt="Family Float Journey">
+                <h2>Family Float Journey</h2>
+                <p>A 2-day gentle rafting trip ideal for families and beginners. Enjoy Class I-II rapids, scenic views, and fun stops for swimming. All equipment and guides provided.</p>
+            </div>
+            <div class="trip">
+                <img src="images/img2_wwr.jpg" alt="Extreme Expedition">
+                <h2>Extreme Expedition</h2>
+                <p>Our 5-day Extreme Expedition is for seasoned adventurers. Tackle Class IV-V rapids, explore remote rivers, and camp under the stars. Requires prior rafting experience.</p>
+            </div>
+        </section>
+        <section class="trips-table">
+            <h2>Available Trips</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Trip Name</th>
+                        <th>Duration</th>
+                        <th>Difficulty</th>
+                        <th>Price</th>
+                        <th>Inclusions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rapid Rush Adventure</td>
+                        <td>3 Days</td>
+                        <td>Class III-IV</td>
+                        <td>$599</td>
+                        <td>Camping, Meals, Gear</td>
+                    </tr>
+                    <tr>
+                        <td>Family Float Journey</td>
+                        <td>2 Days</td>
+                        <td>Class I-II</td>
+                        <td>$349</td>
+                        <td>Guides, Gear</td>
+                    </tr>
+                    <tr>
+                        <td>Extreme Expedition</td>
+                        <td>5 Days</td>
+                        <td>Class IV-V</td>
+                        <td>$999</td>
+                        <td>Camping, Meals, Gear</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 White Water Rafting | All rights reserved</p>
+        <p><a href="images/trips-wireframe.png">Trips Page Wireframe</a></p>
+        <nav>
+            <a href="https://facebook.com"><img src="images/facebook.webp" alt="Facebook"></a>
+            <a href="https://twitter.com"><img src="images/twitter.webp" alt="Twitter"></a>
+            <a href="https://instagram.com"><img src="images/instagram.webp" alt="Instagram"></a>
+        </nav>
+    </footer>
+</body>
+</html>

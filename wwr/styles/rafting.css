@@ -30,10 +30,37 @@ header {
     padding: 1rem;
 }
 
+/* Header with CSS Grid */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: ;
+    color: #F7FAFC; /* Adjusted for better contrast */
+    padding: 1rem;
+}
+
 header img {
     width: 200px;
     height: auto;
     justify-self: start;
+}
+
+/* Navigation with CSS Flex */
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--accent2-color);
+    margin: 0 15px;
+    padding: 8px;
+}
+
+nav a:hover {
+    color: #F7FAFC; /* Ensured readability */
 }
 
 /* Navigation with CSS Flex */
