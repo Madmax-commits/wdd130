@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com');
 @import url('https://fonts.googlestatic.com');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Roboto&display=swap');
+
 /* Global Styles */
 :root {
     --primary-color: #14110F; /* Darker Smoky Black */
@@ -9,8 +10,8 @@
     --accent2-color: #3059A4; /* Better Readability */
     --heading-font: "Alegreya SC", sans-serif;
     --body-font: Roboto, sans-serif;
-  
-}        
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,37 +34,10 @@ header {
     padding: 1rem;
 }
 
-/* Header with CSS Grid */
-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    background-color:#2B2320 ;
-    color: #F7FAFC; /* Adjusted for better contrast */
-    padding: 1rem;
-}
-
 header img {
     width: 200px;
     height: auto;
     justify-self: start;
-}
-
-/* Navigation with CSS Flex */
-nav {
-    display: flex;
-    justify-content: flex-end;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--accent2-color);
-    margin: 0 15px;
-    padding: 8px;
-}
-
-nav a:hover {
-    color: #F7FAFC; /* Ensured readability */
 }
 
 /* Navigation with CSS Flex */
@@ -127,7 +101,6 @@ nav a:hover {
     border-radius: 8px;
 }
 
-/* Floating image remains with subtle enhancements */
 .hero article img.float-img {
     float: right;
     margin-left: 16px;
@@ -245,4 +218,3 @@ footer {
         width: 100px;
     }
 }
-
