@@ -1,36 +1,38 @@
 
 /* Header with CSS Grid */
+/* Unified Header Styling */
 header {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex; /* Use Flexbox for consistency */
+    justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: burlywood;
     color: #F7FAFC; /* Adjusted for better contrast */
     padding: 1rem;
+    width: 100%; /* Ensures full width alignment */
 }
 
+/* Logo Styling */
 header img {
     width: 200px;
     height: auto;
-    justify-self: start;
 }
 
-/* Navigation with CSS Flex */
+/* Navigation Links */
 nav {
     display: flex;
-    justify-content: flex-end;
+    gap: 20px;
 }
 
 nav a {
     text-decoration: none;
     color: var(--accent2-color);
-    margin: 0 15px;
     padding: 8px;
 }
 
 nav a:hover {
     color: #F7FAFC; /* Ensured readability */
 }
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -154,3 +156,16 @@ nav a:hover {
 .newsletter button:hover {
   background-color: #033e6b;
 }
+footer {
+    background-color: #2c3e50; /* Dark blue-gray for contrast */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+footer p {
+    margin: 0;
+}
+
