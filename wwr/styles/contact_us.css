@@ -113,10 +113,12 @@ h1 {
 }
 
 .employee-container {
- display: grid; 
- grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
- gap: 40px; 
- justify-items: center;
+ display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .employee {
@@ -270,10 +272,7 @@ footer p {
         text-align: center;
     }
 
-    .employee-profiles .employee-container {
-        flex-direction: column;
-        align-items: center;
-    }
+    
 
     .map-container iframe {
         width: 100%;
