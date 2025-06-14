@@ -102,6 +102,7 @@ h1 {
 .employee-profiles {
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 60PX;
 }
 
 .employee-profiles h2 {
@@ -113,9 +114,9 @@ h1 {
 }
 
 .employee-container {
- display: flex;
+  display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 40px;
   flex-wrap: wrap;
   margin-top: 20px;
@@ -128,6 +129,7 @@ h1 {
  }
 
 .employee img {
+  margin-top: 20px;  
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -136,6 +138,7 @@ h1 {
 }
 
 .employee p {
+  margin-top: 20px;
   font-size: 1rem;
   color: #333;
 }
@@ -271,10 +274,7 @@ footer p {
         flex-direction: column;
         text-align: center;
     }
-
-    
-
-    .map-container iframe {
+.map-container iframe {
         width: 100%;
     }
 }
